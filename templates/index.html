@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+     background-color: rgb(233, 238, 236);
+    }
+ 
+    input, label, button, p {
+     font-size: 1.5rem;
+    }
+     .container {
+       margin-left: 20px;
+     }
+ 
+    
+ 
+     .center {
+     text-align: center;
+     margin: 5px;
+ }
+ a:link, a:visited {
+   background-color: #f42718;
+   color: white;
+   padding: 14px 25px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   margin-right: 10px;
+ }
+ 
+ a:hover, a:active {
+   background-color: rgb(72, 182, 246);
+   scale: 1.05;
+ }
+ 
+ button:hover {
+  background-color: rgb(171, 249, 249);
+
+ }
+
+ label {
+  padding: 4px 0;
+}
+  </style>
+  <title>Support Vector Machines</title>
+  
+</head>
+
+<body>
+ <div class="container">
+  <a href="https://digitaltalent.shop/projects.html" >Go to Projets Home</a>
+  <a href="https://digitaltalent.mod.html" >Explore PDF file</a>
+	<h1>Support Vector Machines</h1>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{url_for('predict')}}" method="post">
+      <label for="input_value1">Signal strength returned in nHZ</label><br>
+      <br>
+      <input type="text" name="input_value1" placeholder="Signal Strength" required="required" /><br>
+     <br>
+     <br>
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict Rock Dencity</button></p>
+    </form>
+
+  
+   <p>Dencity is returned in kg/m3</p>
+   <h4 style="font-size: 1.6rem;">
+   {{ prediction_text }} </h4>
+  
+
+ </div>
+
+
+</body>
+</html>
